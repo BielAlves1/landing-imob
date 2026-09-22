@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1118" />
+    <meta
+      name="description"
+      content="Plataforma imobiliária pronta para transformar a presença digital da sua imobiliária em uma experiência moderna de busca, apresentação de imóveis e geração de contatos."
+    />
+    <meta name="author" content="Innovare Soluções" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Plataforma imobiliária para sua imobiliária" />
+    <meta
+      property="og:description"
+      content="Um site imobiliário moderno, pesquisável e preparado para apresentar imóveis com mais clareza e profissionalismo."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <title>Plataforma Imobiliária | Site profissional para imobiliárias</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: {
+                950: '#07090d',
+                900: '#0b0e13',
+                850: '#10141b',
+                800: '#151a22',
+                700: '#232a35',
+                600: '#353e4c',
+              },
+              glow: {
+                300: '#d9ff8d',
+                400: '#c4ff5d',
+                500: '#a8ef36',
+                600: '#8bd924',
+              },
+            },
+            fontFamily: {
+              display: ['Space Grotesk', 'sans-serif'],
+              sans: ['DM Sans', 'sans-serif'],
+            },
+            boxShadow: {
+              glow: '0 0 50px rgba(168, 239, 54, .16)',
+              panel: '0 25px 80px rgba(0, 0, 0, .35)',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-ink-950 font-sans text-white antialiased overflow-x-hidden">
+    <div class="site-noise" aria-hidden="true"></div>
+    <div class="pointer-glow" id="pointer-glow" aria-hidden="true"></div>
+
+    <header id="navbar">
+      <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+        <a href="#inicio" class="group flex items-center gap-3" aria-label="Voltar ao início">
+          <img src="./assets/images/logo.png" alt="Plataforma Imobiliária" class="size-10 object-contain sm:size-12" />
+
+          <span class="leading-none">
+            <span class="block font-display text-lg font-semibold tracking-tight"> PLATAFORMA </span>
+
+            <span class="block text-[10px] font-semibold tracking-[.28em] text-white/40"> IMOBILIÁRIA </span>
+          </span>
+        </a>
+
+        <nav class="hidden items-center gap-8 lg:flex" aria-label="Navegação principal">
+          <a href="#produto" class="nav-link">O produto</a>
+          <a href="#recursos" class="nav-link">Recursos</a>
+          <a href="#processo" class="nav-link">Como funciona</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="#contato"
+            class="hidden rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white/90 transition hover:border-glow-400/40 hover:bg-white/5 sm:inline-flex"
+          >
+            Quero conhecer
+          </a>
+
+          <button id="menu-toggle" type="button" aria-controls="mobile-menu" aria-label="Abrir menu" aria-expanded="false">
+            <svg id="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+
+            <svg id="menu-close" class="hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="m6 6 12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu">
+        <a href="#produto" class="mobile-link">O produto</a>
+        <a href="#recursos" class="mobile-link">Recursos</a>
+        <a href="#processo" class="mobile-link">Como funciona</a>
+        <a href="#faq" class="mobile-link">FAQ</a>
+        <a href="#contato" class="mobile-link mobile-cta"> Quero conhecer </a>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero-section relative isolate overflow-hidden pt-20 sm:pt-24" aria-labelledby="hero-title">
+        <div class="hero-orb hero-orb-a" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div
+          class="mx-auto grid w-full max-w-7xl items-center gap-10 px-5 py-10 sm:gap-14 sm:px-6 sm:py-14 lg:grid-cols-[.88fr_1.12fr] lg:gap-12 lg:px-8 lg:py-20"
+        >
+          <div class="reveal relative z-10 w-full max-w-2xl" data-delay="0">
+            <div class="eyebrow mb-5 sm:mb-7">
+              <span class="eyebrow-dot"></span>
+              Plataforma pronta para imobiliárias
+            </div>
+
+            <h1
+              id="hero-title"
+              class="font-display text-[2.35rem] font-semibold leading-[1] tracking-[-.055em] text-white min-[400px]:text-[2.6rem] sm:text-6xl lg:text-[4.65rem]"
+            >
+              Seu imóvel merece uma experiência
+              <span class="hero-gradient">à altura.</span>
+            </h1>
+
+            <p class="mt-5 max-w-xl text-base leading-7 text-white/60 sm:mt-7 sm:text-xl sm:leading-8">
+              Um site imobiliário moderno para apresentar imóveis, facilitar a busca e transformar cada visita em uma próxima conversa.
+            </p>
+
+            <div class="mt-7 grid w-full gap-3 sm:mt-9 sm:flex">
+              <a href="#contato" class="primary-btn w-full justify-center sm:w-auto">
+                Solicitar apresentação
+                <span>↗</span>
+              </a>
+
+              <a href="#produto" class="secondary-btn w-full justify-center sm:w-auto"> Ver o produto </a>
+            </div>
+
+            <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs font-medium text-white/35 sm:mt-9 sm:gap-x-7">
+              <span class="inline-flex items-center gap-2">
+                <i class="mini-check">✓</i>
+                Busca por filtros
+              </span>
+
+              <span class="inline-flex items-center gap-2">
+                <i class="mini-check">✓</i>
+                Catálogo de imóveis
+              </span>
+
+              <span class="inline-flex items-center gap-2">
+                <i class="mini-check">✓</i>
+                Responsivo
+              </span>
+            </div>
+          </div>
+
+          <div class="reveal relative z-10 w-full min-w-0 lg:pl-2" data-delay="140">
+            <div class="hero-preview">
+              <div class="hero-window product-window">
+                <div class="browser-bar">
+                  <div class="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="browser-address">sua-imobiliaria.com.br</div>
+
+                  <div class="browser-action">↗</div>
+                </div>
+
+                <div class="browser-content">
+                  <img
+                    src="assets/images/produto-home.png"
+                    alt="Tela do sistema imobiliário mostrando a busca de imóveis e filtros"
+                    loading="eager"
+                    fetchpriority="high"
+                  />
+
+                  <div class="window-shine"></div>
+                </div>
+              </div>
+
+              <div class="floating-chip floating-chip-top">
+                <span class="chip-icon">⌕</span>
+
+                <span>
+                  <b>Busca inteligente</b>
+                  <small>filtros para encontrar o imóvel certo</small>
+                </span>
+              </div>
+
+              <div class="floating-chip floating-chip-bottom">
+                <span class="chip-pulse"></span>
+
+                <span>
+                  <b>Experiência real</b>
+                  <small>interface baseada no produto em uso</small>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-bottom-fade" aria-hidden="true"></div>
+      </section>
+
+      <section class="border-y border-white/[.06] bg-ink-900/70" aria-label="Visão geral da plataforma">
+        <div class="mx-auto grid max-w-7xl gap-px px-5 sm:px-6 md:grid-cols-3 lg:px-8">
+          <div class="stat-item reveal">
+            <span class="stat-number">01</span>
+            <div>
+              <strong>Vitrine completa</strong>
+              <p>Imóveis organizados em uma navegação clara.</p>
+            </div>
+          </div>
+          <div class="stat-item reveal" data-delay="80">
+            <span class="stat-number">02</span>
+            <div>
+              <strong>Busca detalhada</strong>
+              <p>Filtros que ajudam o cliente a chegar ao que procura.</p>
+            </div>
+          </div>
+          <div class="stat-item reveal" data-delay="160">
+            <span class="stat-number">03</span>
+            <div>
+              <strong>Contato facilitado</strong>
+              <p>CTAs e canais de atendimento no ponto certo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="produto" class="section-space relative overflow-hidden">
+        <div class="section-glow section-glow-left" aria-hidden="true"></div>
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div class="grid items-center gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+            <div class="reveal" data-delay="0">
+              <span class="section-kicker">O produto</span>
+              <h2 class="section-title">Não é só uma página. É a vitrine digital da sua imobiliária.</h2>
+              <p class="section-copy">
+                A estrutura foi pensada para reproduzir a rotina de uma imobiliária de verdade: o cliente chega, encontra imóveis, refina a busca,
+                conhece os detalhes e encontra um caminho simples para falar com a equipe.
+              </p>
+              <div class="mt-8 space-y-4">
+                <div class="detail-row">
+                  <span class="detail-icon">01</span>
+                  <div>
+                    <strong>Catálogo organizado</strong>
+                    <p>Imóveis separados por categorias e apresentados de forma consistente.</p>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">02</span>
+                  <div>
+                    <strong>Filtros de busca</strong>
+                    <p>Finalidade, tipo, cidade, bairro, dormitórios, suítes, vagas e faixa de preço.</p>
+                  </div>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-icon">03</span>
+                  <div>
+                    <strong>Página preparada para conversão</strong>
+                    <p>Informação útil, navegação direta e pontos de contato visíveis.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal" data-delay="120">
+              <div class="showcase-frame">
+                <div class="showcase-top">
+                  <span>Busca de imóveis</span><span class="showcase-status"><i></i> interface real</span>
+                </div>
+                <img
+                  src="assets/images/produto-home.png"
+                  alt="Exemplo real da página inicial da plataforma imobiliária com filtros de pesquisa"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space bg-ink-900/55 border-y border-white/[.05] overflow-hidden">
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div class="mb-12 max-w-3xl reveal">
+            <span class="section-kicker">Do outro lado da busca</span>
+            <h2 class="section-title">O cliente visualiza. A equipe recebe uma oportunidade.</h2>
+            <p class="section-copy">
+              A segunda tela mostra como os imóveis podem ser organizados em categorias e cards, com preço, localização, metragem e características
+              essenciais à vista.
+            </p>
+          </div>
+
+          <div class="reveal" data-delay="100">
+            <div class="wide-browser product-window">
+              <div class="browser-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-address">sua-imobiliaria.com.br/imoveis</div>
+                <div class="browser-action">↗</div>
+              </div>
+              <div class="browser-content browser-content-tall">
+                <img
+                  src="assets/images/produto-imoveis.png"
+                  alt="Exemplo real da vitrine de imóveis com cards de casas e apartamentos"
+                  loading="lazy"
+                />
+                <div class="window-shine"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-3">
+            <div class="micro-card reveal">
+              <span>01</span><strong>Cards de imóveis</strong>
+              <p>Leitura rápida sem esconder as informações importantes.</p>
+            </div>
+            <div class="micro-card reveal" data-delay="70">
+              <span>02</span><strong>Categorias visíveis</strong>
+              <p>Casas, apartamentos e outras ofertas organizadas em blocos claros.</p>
+            </div>
+            <div class="micro-card reveal" data-delay="140">
+              <span>03</span><strong>Detalhes essenciais</strong>
+              <p>Localização, quartos, banheiros, vagas e outras informações de decisão.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recursos" class="section-space relative">
+        <div class="section-glow section-glow-right" aria-hidden="true"></div>
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center reveal">
+            <span class="section-kicker">Recursos</span>
+            <h2 class="section-title">Uma base pronta para a operação da sua imobiliária.</h2>
+            <p class="section-copy mx-auto">
+              O projeto foi estruturado como produto, não como uma landing page descartável. Isso permite reaproveitar a base e personalizar
+              identidade, conteúdo e catálogo para cada cliente.
+            </p>
+          </div>
+
+          <div class="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <article class="feature-card reveal">
+              <div class="feature-num">01</div>
+              <h3>Catálogo de imóveis</h3>
+              <p>Estrutura para apresentar diferentes tipos de propriedades sem poluir a navegação.</p>
+              <span class="feature-line"></span>
+            </article>
+            <article class="feature-card reveal" data-delay="60">
+              <div class="feature-num">02</div>
+              <h3>Filtros avançados</h3>
+              <p>Busca por finalidade, tipo, localização, dormitórios, suítes, vagas e faixa de preço.</p>
+              <span class="feature-line"></span>
+            </article>
+            <article class="feature-card reveal" data-delay="120">
+              <div class="feature-num">03</div>
+              <h3>Páginas de detalhe</h3>
+              <p>Espaço para fotos, características, localização, código de referência e contato.</p>
+              <span class="feature-line"></span>
+            </article>
+            <article class="feature-card reveal">
+              <div class="feature-num">04</div>
+              <h3>Responsivo de verdade</h3>
+              <p>Uma experiência pensada para desktop, tablet e celular desde a estrutura.</p>
+              <span class="feature-line"></span>
+            </article>
+            <article class="feature-card reveal" data-delay="60">
+              <div class="feature-num">05</div>
+              <h3>WhatsApp em evidência</h3>
+              <p>Chamadas de atendimento podem aparecer em pontos estratégicos da jornada.</p>
+              <span class="feature-line"></span>
+            </article>
+            <article class="feature-card reveal" data-delay="120">
+              <div class="feature-num">06</div>
+              <h3>Base reutilizável</h3>
+              <p>Uma arquitetura visual e funcional que pode ser adaptada para diferentes imobiliárias.</p>
+              <span class="feature-line"></span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space overflow-hidden bg-[#0a0d11] border-y border-white/[.05]">
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_.9fr]">
+            <div class="reveal order-2 lg:order-1">
+              <div class="device-stack">
+                <div class="device-back">
+                  <img src="assets/images/produto-imoveis.png" alt="Lista de imóveis da plataforma em perspectiva" loading="lazy" />
+                </div>
+                <div class="device-front">
+                  <img src="assets/images/produto-home.png" alt="Busca de imóveis da plataforma em destaque" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="reveal order-1 lg:order-2" data-delay="120">
+              <span class="section-kicker">Experiência</span>
+              <h2 class="section-title">Informação antes da conversa. Conversa no momento certo.</h2>
+              <p class="section-copy">
+                O site não precisa responder tudo sozinho. Ele precisa dar contexto suficiente para que o próximo contato seja mais fácil.
+              </p>
+              <div class="mt-8 grid gap-3 sm:grid-cols-2">
+                <div class="pill-card"><span>✓</span>Informações essenciais</div>
+                <div class="pill-card"><span>✓</span>Navegação objetiva</div>
+                <div class="pill-card"><span>✓</span>Visual profissional</div>
+                <div class="pill-card"><span>✓</span>CTA para atendimento</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="processo" class="section-space">
+        <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center reveal">
+            <span class="section-kicker">Como funciona</span>
+            <h2 class="section-title">Uma base pronta. Uma entrega adaptada ao seu negócio.</h2>
+            <p class="section-copy mx-auto">
+              A ideia é acelerar a criação de novos projetos sem transformar todas as imobiliárias em cópias umas das outras.
+            </p>
+          </div>
+
+          <div class="process-grid mt-14">
+            <div class="process-line" aria-hidden="true"></div>
+            <article class="process-card reveal">
+              <span>01</span>
+              <h3>Entendemos a operação</h3>
+              <p>Mapeamos identidade, catálogo, cidades, canais de contato e necessidades do cliente.</p>
+            </article>
+            <article class="process-card reveal" data-delay="80">
+              <span>02</span>
+              <h3>Adaptamos a base</h3>
+              <p>A estrutura existente recebe identidade visual, conteúdos e ajustes específicos.</p>
+            </article>
+            <article class="process-card reveal" data-delay="160">
+              <span>03</span>
+              <h3>Validamos a experiência</h3>
+              <p>Conferimos navegação, filtros, responsividade e os pontos de conversão.</p>
+            </article>
+            <article class="process-card reveal" data-delay="240">
+              <span>04</span>
+              <h3>Publicamos</h3>
+              <p>O projeto segue para a hospedagem e começa a fazer parte da presença digital da imobiliária.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 pb-10 sm:px-6 lg:px-8">
+        <div class="cta-strip reveal">
+          <div>
+            <span class="section-kicker">Pronto para apresentar a sua imobiliária melhor?</span>
+            <h2 class="mt-2 max-w-2xl font-display text-3xl font-semibold tracking-[-.03em] sm:text-4xl">
+              Mostramos a plataforma funcionando com o seu cenário.
+            </h2>
+          </div>
+          <a href="#contato" class="primary-btn">Solicitar apresentação <span>↗</span></a>
+        </div>
+      </section>
+
+      <section id="faq" class="section-space">
+        <div class="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
+          <div class="text-center reveal">
+            <span class="section-kicker">FAQ</span>
+            <h2 class="section-title">Perguntas que normalmente aparecem antes de começar.</h2>
+          </div>
+          <div class="mt-12 space-y-3">
+            <article class="faq-item reveal">
+              <button class="faq-toggle" type="button" aria-expanded="false">
+                <span>Essa plataforma pode ser personalizada para cada imobiliária?</span><span class="faq-icon">+</span>
+              </button>
+              <div class="faq-content">
+                <p>
+                  Sim. A ideia da base reutilizável é justamente permitir adaptações de identidade visual, conteúdo, catálogo, contatos e necessidades
+                  específicas de cada projeto.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item reveal" data-delay="50">
+              <button class="faq-toggle" type="button" aria-expanded="false">
+                <span>O site funciona no celular?</span><span class="faq-icon">+</span>
+              </button>
+              <div class="faq-content">
+                <p>Sim. O layout é responsivo e a interface deve ser ajustada para diferentes tamanhos de tela durante a implementação do projeto.</p>
+              </div>
+            </article>
+            <article class="faq-item reveal" data-delay="100">
+              <button class="faq-toggle" type="button" aria-expanded="false">
+                <span>É possível integrar WhatsApp e outros canais?</span><span class="faq-icon">+</span>
+              </button>
+              <div class="faq-content">
+                <p>
+                  Sim. A estrutura permite posicionar links e chamadas para WhatsApp e outros canais de atendimento conforme a estratégia da
+                  imobiliária.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item reveal" data-delay="150">
+              <button class="faq-toggle" type="button" aria-expanded="false">
+                <span>Preciso ter um sistema pronto para cadastrar os imóveis?</span><span class="faq-icon">+</span>
+              </button>
+              <div class="faq-content">
+                <p>
+                  Não necessariamente. A forma de alimentação dos imóveis depende do projeto e pode ser definida de acordo com a operação e as
+                  ferramentas já usadas pela imobiliária.
+                </p>
+              </div>
+            </article>
+            <article class="faq-item reveal" data-delay="200">
+              <button class="faq-toggle" type="button" aria-expanded="false">
+                <span>Posso começar com uma estrutura menor e evoluir depois?</span><span class="faq-icon">+</span>
+              </button>
+              <div class="faq-content">
+                <p>
+                  Sim. Como a solução parte de uma base modular, a implantação pode começar pelo essencial e receber novas funcionalidades conforme a
+                  necessidade.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" class="contact-section relative isolate overflow-hidden">
+        <div class="contact-orb" aria-hidden="true"></div>
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-6 lg:grid-cols-[1fr_.82fr] lg:gap-20 lg:px-8 lg:py-28">
+          <div class="reveal">
+            <span class="section-kicker">Próximo passo</span>
+            <h2 class="section-title text-white">Quer ver como essa estrutura pode ficar com a sua marca?</h2>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-white/55">
+              Envie seus dados. A equipe pode apresentar o produto, mostrar as possibilidades de personalização e entender o cenário da sua
+              imobiliária.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3 text-sm text-white/50">
+              <span class="contact-badge">Demonstração</span>
+              <span class="contact-badge">Personalização</span>
+              <span class="contact-badge">Estrutura reutilizável</span>
+            </div>
+          </div>
+
+          <div class="reveal" data-delay="120">
+            <form id="contact-form" class="contact-card" novalidate>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <label
+                  ><span>Seu nome</span><input id="name" name="name" type="text" autocomplete="name" placeholder="Como podemos chamar você?" required
+                /></label>
+                <label
+                  ><span>WhatsApp</span><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000" required
+                /></label>
+              </div>
+              <label
+                ><span>E-mail</span><input id="email" name="email" type="email" autocomplete="email" placeholder="voce@imobiliaria.com.br" required
+              /></label>
+              <label
+                ><span>Imobiliária</span><input id="company" name="company" type="text" autocomplete="organization" placeholder="Nome da empresa"
+              /></label>
+              <label
+                ><span>O que você procura?</span
+                ><textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Ex.: quero conhecer a plataforma e saber como seria a personalização."
+                ></textarea>
+              </label>
+              <button class="primary-btn w-full justify-center" type="submit">Enviar pelo WhatsApp <span>↗</span></button>
+              <p class="form-note">Ao enviar, suas informações serão usadas apenas para entrar em contato sobre a plataforma.</p>
+              <div id="form-success" class="hidden rounded-2xl border border-glow-400/20 bg-glow-400/5 p-4 text-sm text-white/75">
+                Mensagem preparada. O WhatsApp será aberto em uma nova aba.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/[.06] bg-ink-950">
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 text-sm text-white/35 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8"
+      >
+        <div><strong class="text-white/65">PLATAFORMA IMOBILIÁRIA</strong><span class="mx-2">·</span><span>Site comercial</span></div>
+        <div>© <span id="year"></span> Todos os direitos reservados.</div>
+      </div>
+    </footer>
+
+    <a id="whatsapp-float" href="#contato" class="whatsapp-float" aria-label="Falar pelo WhatsApp">
+      <span>WA</span>
+    </a>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
