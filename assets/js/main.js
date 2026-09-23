@@ -2,7 +2,7 @@
   'use strict';
 
   // Configurações
-  const WHATSAPP_NUMBER = '5500000000000';
+  const WHATSAPP_NUMBER = '551938936001';
   const DEFAULT_MESSAGE = 'Olá! Quero conhecer a plataforma para imobiliárias.';
 
   // Elementos
@@ -120,6 +120,65 @@
       element.classList.add('visible');
     });
   }
+
+  // Galeria de imagens
+  const imageModal = document.getElementById('image-modal');
+  const imageModalImage = document.getElementById('image-modal-image');
+  const imageModalTitle = document.getElementById('image-modal-title');
+  const imageModalClose = document.getElementById('image-modal-close');
+  const imageModalBackdrop = imageModal?.querySelector('.image-modal-backdrop');
+  const deviceCards = document.querySelectorAll('.device-card');
+
+  function openImageModal(image, title, alt) {
+    if (!imageModal || !imageModalImage) return;
+
+    imageModalImage.src = image;
+    imageModalImage.alt = alt || title || 'Imagem ampliada';
+
+    imageModal.classList.add('is-open');
+    imageModal.setAttribute('aria-hidden', 'false');
+
+    document.body.style.overflow = 'hidden';
+
+    imageModalClose?.focus();
+  }
+
+  function closeImageModal() {
+    if (!imageModal || !imageModalImage) return;
+
+    imageModal.classList.remove('is-open');
+    imageModal.setAttribute('aria-hidden', 'true');
+
+    document.body.style.overflow = '';
+
+    setTimeout(() => {
+      if (!imageModal.classList.contains('is-open')) {
+        imageModalImage.src = '';
+      }
+    }, 300);
+  }
+
+  deviceCards.forEach(function (card) {
+    card.addEventListener('click', function () {
+      const image = card.dataset.image;
+      const title = card.dataset.title;
+      const img = card.querySelector('img');
+
+      if (!image) return;
+
+      openImageModal(image, title, img?.alt || title || 'Imagem ampliada');
+    });
+  });
+
+  imageModalClose?.addEventListener('click', closeImageModal);
+
+  imageModalBackdrop?.addEventListener('click', closeImageModal);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      closeImageModal();
+    }
+  });
 
   // FAQ
   document.querySelectorAll('.faq-toggle').forEach(function (button) {

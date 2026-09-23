@@ -399,12 +399,38 @@
           <div class="grid items-center gap-12 lg:grid-cols-[1.1fr_.9fr]">
             <div class="reveal order-2 lg:order-1">
               <div class="device-stack">
-                <div class="device-back">
-                  <img src="assets/images/produto-imoveis.png" alt="Lista de imóveis da plataforma em perspectiva" loading="lazy" />
-                </div>
-                <div class="device-front">
-                  <img src="assets/images/produto-home.png" alt="Busca de imóveis da plataforma em destaque" loading="lazy" />
-                </div>
+                <button
+                  type="button"
+                  class="device-card device-back"
+                  data-image="assets/images/produto-imoveis.png"
+                  data-title="Lista de imóveis"
+                  aria-label="Ampliar lista de imóveis"
+                >
+                  <img src="assets/images/produto-imoveis.png" alt="Lista de imóveis da plataforma" loading="lazy" />
+                  <span class="device-zoom">↗</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="device-card device-mid"
+                  data-image="assets/images/produto-view.png"
+                  data-title="Visualização do imóvel"
+                  aria-label="Ampliar visualização do imóvel"
+                >
+                  <img src="assets/images/produto-view.png" alt="Página de visualização de imóvel da plataforma" loading="lazy" />
+                  <span class="device-zoom">↗</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="device-card device-front"
+                  data-image="assets/images/produto-home.png"
+                  data-title="Página inicial da plataforma"
+                  aria-label="Ampliar página inicial da plataforma"
+                >
+                  <img src="assets/images/produto-home.png" alt="Página inicial da plataforma imobiliária" loading="lazy" />
+                  <span class="device-zoom">↗</span>
+                </button>
               </div>
             </div>
             <div class="reveal order-1 lg:order-2" data-delay="120">
@@ -600,6 +626,18 @@
     <a id="whatsapp-float" href="#contato" class="whatsapp-float" aria-label="Falar pelo WhatsApp">
       <span>WA</span>
     </a>
+
+    <div id="image-modal" class="image-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="image-modal-backdrop"></div>
+
+      <div class="image-modal-content">
+        <button type="button" id="image-modal-close" class="image-modal-close" aria-label="Fechar imagem">
+          <span>×</span>
+        </button>
+
+        <img id="image-modal-image" src="" alt="" />
+      </div>
+    </div>
 
     <script src="assets/js/main.js"></script>
   </body>
