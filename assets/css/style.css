@@ -1226,6 +1226,27 @@ body {
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.22);
 }
 
+/*PROMO */
+.promo-image-trigger {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  transform: none;
+  opacity: 1;
+}
+
+.promo-image-trigger img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  justyfy-content: center;
+}
+
 /* =========================================================
    FAQ
    ========================================================= */
@@ -1397,30 +1418,66 @@ body {
   text-align: center;
 }
 
-/* =========================================================
-   WhatsApp
-   ========================================================= */
-
-.whatsapp-float {
+/* Floating WhatsApp + onda pulsante */
+.wa-float {
   position: fixed;
-  right: 0.9rem;
-  bottom: 0.9rem;
-  z-index: 45;
-  display: grid;
-  place-items: center;
-  width: 3.6rem;
-  height: 3.6rem;
-  border-radius: 999px;
-  background: var(--success);
-  color: #081008;
-  font-size: 0.72rem;
-  font-weight: 900;
-  box-shadow:
-    0 15px 35px rgba(26, 209, 93, 0.2),
-    0 0 0 8px rgba(26, 209, 93, 0.08);
+  z-index: 40;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  right: calc(1.25rem + env(safe-area-inset-right, 0px));
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #20bd5a; /* seu verde escuro como cor normal */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45); /* verde claro na sombra */
   transition:
+    background-color 0.25s ease,
     transform 0.25s ease,
     box-shadow 0.25s ease;
+}
+
+.wa-float:hover {
+  background-color: #1aa34d; /* levemente mais escuro no hover */
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+}
+
+/* Ondas (animação do primeiro exemplo) */
+.wa-float::before,
+.wa-float::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  border: 3px solid #25d366; /* verde claro na onda */
+  opacity: 0;
+  animation: WaveWhatsApp 1.8s ease infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.wa-float::after {
+  animation-delay: 0.6s;
+}
+
+@keyframes WaveWhatsApp {
+  0% {
+    transform: scale(0.55);
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
 }
 
 /* =========================================================
@@ -1501,6 +1558,66 @@ body {
 /* =========================================================
    Telas pequenas
    ========================================================= */
+
+@media (max-width: 639px) {
+  .image-modal {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .image-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+  }
+
+  .image-modal-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: 4rem 0.75rem 1rem;
+    box-sizing: border-box;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .image-modal-content > img {
+    display: block;
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    max-width: calc(100vw - 1.5rem);
+    max-height: calc(100dvh - 5rem);
+    object-fit: contain;
+    object-position: center center;
+    margin: auto;
+    border-radius: 0.65rem;
+    transform: none;
+  }
+
+  .image-modal.is-open .image-modal-content > img {
+    transform: none;
+  }
+
+  .image-modal-close {
+    position: fixed;
+    top: max(0.75rem, env(safe-area-inset-top));
+    right: max(0.75rem, env(safe-area-inset-right));
+    z-index: 10;
+  }
+}
 
 @media (min-width: 640px) {
   .floating-chip {
@@ -1611,7 +1728,7 @@ body {
   }
 
   .section-space {
-    padding: 6.5rem 0;
+    padding: 4rem 0;
   }
 
   .stat-item {

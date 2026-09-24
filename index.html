@@ -84,12 +84,7 @@
         </nav>
 
         <div class="flex items-center gap-3">
-          <a
-            href="#contato"
-            class="hidden rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white/90 transition hover:border-glow-400/40 hover:bg-white/5 sm:inline-flex"
-          >
-            Quero conhecer
-          </a>
+          <a href="#contato" class="hidden sm:inline-flex min-h-0 primary-btn px-5 py-2.5 text-sm"> Quero conhecer </a>
 
           <button id="menu-toggle" type="button" aria-controls="mobile-menu" aria-label="Abrir menu" aria-expanded="false">
             <svg id="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -285,7 +280,7 @@
                   <span>Busca de imóveis</span><span class="showcase-status"><i></i> interface real</span>
                 </div>
                 <img
-                  src="assets/images/produto-home.png"
+                  src="assets/images/produto-home2.png"
                   alt="Exemplo real da página inicial da plataforma imobiliária com filtros de pesquisa"
                   loading="lazy"
                 />
@@ -486,7 +481,81 @@
         </div>
       </section>
 
-      <section class="mx-auto max-w-7xl px-5 pb-10 sm:px-6 lg:px-8">
+      <section id="oferta" class="relative overflow-hidden border-y border-white/[.06] bg-[#0a0d11]">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_18%_50%,rgba(168,239,54,.12),transparent_32%),radial-gradient(circle_at_82%_50%,rgba(168,239,54,.07),transparent_28%)]"
+          aria-hidden="true"
+        ></div>
+
+        <div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <div class="grid items-center gap-10 lg:grid-cols-[1fr_.95fr] lg:gap-16">
+            <div
+              class="reveal relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.025] p-2 shadow-2xl shadow-black/20"
+              data-delay="0"
+            >
+              <div class="overflow-hidden rounded-[1.6rem] border border-white/10 bg-ink-900">
+                <button
+                  type="button"
+                  class="device-card promo-image-trigger group block w-full cursor-zoom-in border-0 bg-transparent p-0"
+                  data-image="assets/images/produto-panel.png"
+                  data-title="Painel administrativo da plataforma imobiliária"
+                  aria-label="Ampliar painel administrativo da plataforma imobiliária"
+                >
+                  <img
+                    src="assets/images/produto-panel.png"
+                    alt="Painel administrativo da plataforma imobiliária"
+                    class="h-auto w-full object-contain object-center transition duration-700 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                </button>
+              </div>
+
+              <div
+                class="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full border border-glow-400/30 bg-ink-950/85 px-3.5 py-2 text-[11px] font-bold uppercase tracking-[.16em] text-glow-300 shadow-lg backdrop-blur"
+              >
+                <span class="size-2 rounded-full bg-glow-400 shadow-[0_0_12px_rgba(168,239,54,.7)]"></span>
+                Oferta especial
+              </div>
+            </div>
+
+            <div class="reveal" data-delay="120">
+              <span
+                class="mb-4 inline-flex items-center gap-2 rounded-full border border-glow-400/25 bg-glow-400/10 px-3.5 py-2 text-[11px] font-bold uppercase tracking-[.18em] text-glow-300"
+              >
+                Condição promocional
+              </span>
+
+              <h2 class="max-w-xl font-display text-4xl font-semibold leading-[1.02] tracking-[-.045em] text-white sm:text-5xl lg:text-[3.6rem]">
+                Tenha sua plataforma imobiliária por
+                <span class="hero-gradient block mt-2">R$ 149,90</span>
+              </h2>
+
+              <p class="mt-5 max-w-xl text-base leading-7 text-white/60 sm:text-lg sm:leading-8">
+                Uma estrutura profissional para apresentar seus imóveis, organizar a operação e oferecer uma experiência digital muito mais completa.
+              </p>
+
+              <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-end">
+                <div class="rounded-2xl border border-glow-400/30 bg-glow-400/10 px-5 py-4">
+                  <span class="block text-[10px] font-bold uppercase tracking-[.18em] text-glow-300/75">Por mês</span>
+                  <span class="mt-1 block font-display text-4xl font-bold tracking-[-.04em] text-white sm:text-5xl">R$ 149,90</span>
+                </div>
+
+                <a href="#contato" class="primary-btn min-h-[58px] justify-center px-7 sm:min-w-[230px]">
+                  Quero essa oferta
+                  <span>↗</span>
+                </a>
+              </div>
+
+              <div class="mt-5 flex items-start gap-2 text-[10px] leading-4 text-white/30">
+                <span class="mt-[1px] text-glow-400/70">●</span>
+                <span>Contratação mínima de 12 meses. Consulte condições e disponibilidade da oferta comercial.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-5 pt-10 pb-2 sm:px-6 lg:px-8">
         <div class="cta-strip reveal">
           <div>
             <span class="section-kicker">Pronto para apresentar a sua imobiliária melhor?</span>
@@ -623,8 +692,13 @@
       </div>
     </footer>
 
-    <a id="whatsapp-float" href="#contato" class="whatsapp-float" aria-label="Falar pelo WhatsApp">
-      <span>WA</span>
+    <!-- WhatsApp Floating Button -->
+    <a href="#contato" target="_blank" rel="noopener noreferrer" id="whatsapp-float" class="wa-float" aria-label="Fale conosco no WhatsApp">
+      <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
     </a>
 
     <div id="image-modal" class="image-modal" role="dialog" aria-modal="true" aria-hidden="true">
